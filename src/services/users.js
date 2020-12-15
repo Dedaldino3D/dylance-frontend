@@ -14,6 +14,11 @@ const usersService = () => {
         method: "PATCH",
         url: `${prefix}/${username}/`,
       }),
+    getTopFrelancers: () =>
+      api.request({
+        method: "get",
+        url: `${prefix}/top/`,
+      }),
   };
 };
 

@@ -32,3 +32,17 @@ export const upateProfile = (username) => {
     }
   };
 };
+
+export const getTopFrelancers = () => {
+  return async (dispatch) => {
+    dispatch({ type: types.GET_TOP_FRELANCERS });
+    try {
+      const resp = await usersService().getTopFrelancers();
+      if (resp.status === 200) {
+        dispatch({ type: types.SET_TOP_FRELANCERS, users: resp.data });
+      }
+    } catch (error) {
+      console.log("error: ", error);
+    }
+  };
+};

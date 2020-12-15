@@ -1,3 +1,4 @@
+import Feed from "../components/Feed";
 import TopFrelancers from "../components/TopFrelancers";
 
 const Routes = [
@@ -5,7 +6,7 @@ const Routes = [
     path: "/home",
     exact: true,
     home: () => <aside />,
-    main: () => <main />,
+    main: () => <Feed />,
     sidebar: () => <TopFrelancers />,
   },
 ];
