@@ -46,3 +46,17 @@ export const getTopFrelancers = () => {
     }
   };
 };
+
+export const getSkills = () => {
+  return async (dispatch) => {
+    dispatch({ type: types.GET_SKILLS });
+    try {
+      const resp = await usersService().getSkills();
+      if (resp.status === 200) {
+        dispatch({ type: types.SET_SKILLS, users: resp.data });
+      }
+    } catch (error) {
+      console.log("error: ", error);
+    }
+  };
+};

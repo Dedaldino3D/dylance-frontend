@@ -1,11 +1,12 @@
 import Feed from "../components/Feed";
+import UserInfoFeed from "../components/UserInfoFeed";
 import TopFrelancers from "../components/TopFrelancers";
 
 const Routes = [
   {
     path: "/home",
     exact: true,
-    home: () => <aside />,
+    home: () => <UserInfoFeed />,
     main: () => <Feed />,
     sidebar: () => <TopFrelancers />,
   },

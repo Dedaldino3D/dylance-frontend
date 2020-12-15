@@ -16,8 +16,13 @@ const usersService = () => {
       }),
     getTopFrelancers: () =>
       api.request({
-        method: "get",
+        method: "GET",
         url: `${prefix}/top/`,
+      }),
+    getSkills: () =>
+      api.request({
+        method: "GET",
+        url: `${prefix}/skills/`,
       }),
   };
 };

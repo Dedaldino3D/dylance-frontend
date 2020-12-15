@@ -14,3 +14,5 @@ export const UPDATE_PROFILE_FAILURE = update("FAILURE");
 
 export const GET_TOP_FRELANCERS = user("GET_TOP_FRELANCERS");
 export const SET_TOP_FRELANCERS = user("SET_TOP_FRELANCERS");
+export const GET_SKILLS = user("GET_SKILLS");
+export const SET_SKILLS = user("SET_SKILLS");
