@@ -1,11 +1,13 @@
-const Routes = [
-    {
-        path: "",
-        exact: true,
-        home: () => <aside/>,
-        main: () => <main/>,
-        sidebar: () => <aside/>,
-    },
-]
+import TopFrelancers from "../components/TopFrelancers";
 
-export default Routes
+const Routes = [
+  {
+    path: "/home",
+    exact: true,
+    home: () => <aside />,
+    main: () => <main />,
+    sidebar: () => <TopFrelancers />,
+  },
+];
+
+export default Routes;
