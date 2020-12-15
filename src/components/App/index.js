@@ -1,9 +1,16 @@
-import styled from "styled-components";
+import { Provider } from "react-redux";
 
-const Container = styled.div``;
+import store from "../../store";
+import DefaultRoutes from "../../routes";
+import GlobalStyles from "../Styles/globalStyles";
 
 function App() {
-  return <Container />;
+  return (
+    <Provider store={store}>
+      <GlobalStyles />
+      <DefaultRoutes />
+    </Provider>
+  );
 }
 
 export default App;
