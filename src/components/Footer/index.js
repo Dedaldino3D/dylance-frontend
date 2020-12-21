@@ -3,15 +3,13 @@ import { Link } from "react-router-dom";
 
 const Container = styled.footer`
   width: 100%;
-  border-top: 1px solid var(--border);
-  position: fixed;
   bottom: 0;
   min-height: 50px;
   display: flex;
+  flex-flow: column nowrap;
   justify-content: space-evenly;
   align-items: center;
-  z-index: 10;
-  background: var(--white);
+  margin-top: 40px;
 
   a {
     font-weight: 600;

@@ -25,9 +25,10 @@ export const Container = styled.div`
 
 export const Main = styled.main`
   flex: 6 2 auto;
+  padding: 60px 10px 20px;
   max-width: 600px;
-  border-left: 0.5px solid var(--gray-10);
-  border-right: 0.5px solid var(--gray-10);
+  border-left: 0.5px solid var(--blue-light);
+  border-right: 0.5px solid var(--blue-light);
 `;
 
 const aside = styled.aside`

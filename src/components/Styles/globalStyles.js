@@ -1,7 +1,5 @@
 import { createGlobalStyle } from "styled-components";
 
-import "animate.css/animate.min.css";
-
 export default createGlobalStyle`
 
 	* {
@@ -30,9 +28,9 @@ export default createGlobalStyle`
 
 	body {
 		font: 400 14px/24px Roboto,'Noto Sans','Noto Sans JP','Noto Sans KR','Noto Naskh Arabic','Noto Sans Thai','Noto Sans Hebrew','Noto Sans Bengali', Arial, sans-serif;
-		background-color: var(--bg);
+		background-color: var(--blue-bold);
 		/* color: #202124; */
-		color: #505763;
+		color: var(--white-100);
 	}
 
 	body {
@@ -211,16 +209,16 @@ export default createGlobalStyle`
 		text-decoration: none;
 		font-weight: 400;
 		:link{
-			color: var(--gray-95);
+			color: var(--blue);
 		}
 		:visited{
-			color: var(--gray-95);
+			color: var(--blue);
 		}
 		:hover{
-			color: var(--gray-95);
+			color: var(--blue);
 		}
 		:active{
-			color: var(--gray-95);
+			color: var(--blue);
 		}
 	}
 

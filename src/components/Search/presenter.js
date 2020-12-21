@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import PropTypes from "prop-types";
-import { IoIosSearch } from "react-icons/io";
-import { useMediaQuery } from "react-responsive";
+// import { IoIosSearch } from "react-icons/io";
+// import { useMediaQuery } from "react-responsive";
 
 import Container, {
   FormSearch,
@@ -11,39 +11,37 @@ import Container, {
 } from "./styles";
 
 import Avatar from "../Avatar";
-import { Input, UserHeader } from "../common";
-import RotateSpinLoader from "../Loading/RotateSpinLoader";
+import { Input } from "./styles";
+import RotateSpinLoader from "../Loading";
 
 export const SearchForm = (props) => {
-  const [showSearchForm, setShowSearchForm] = useState(true);
-  const isDesktop = useMediaQuery({ minDeviceWidth: 780 });
+  // const [showSearchForm, setShowSearchForm] = useState(true);
+  // const isDesktop = useMediaQuery({ minDeviceWidth: 780 });
 
-  useEffect(() => {
-    console.log("show search:", isDesktop);
-    if (isDesktop) {
-      setShowSearchForm(true);
-    } else {
-      setShowSearchForm(false);
-    }
-  }, [isDesktop]);
+  // useEffect(() => {
+  //   console.log("show search:", isDesktop);
+  //   if (isDesktop) {
+  //     setShowSearchForm(true);
+  //   } else {
+  //     setShowSearchForm(false);
+  //   }
+  // }, [isDesktop]);
 
   return (
-    showSearchForm && (
-      <Container>
-        <IoIosSearch className="search_icon-form" />
-        <FormSearch method="GET" onSubmit={props.handleSubmit}>
-          <Input
-            type="text"
-            placeholder="Search by users, posts, communitiies, questions..."
-            name="search"
-            onClick={props.handleClick}
-            value={props.term}
-            onChange={props.onInputChange}
-          />
-          {/* <ResultSearch isLoading={false} result={true}/> */}
-        </FormSearch>
-      </Container>
-    )
+    <Container>
+      {/* <IoIosSearch className="search_icon-form" /> */}
+      <FormSearch method="GET" onSubmit={props.handleSubmit}>
+        <Input
+          type="text"
+          placeholder="Search by users, posts, communitiies, questions..."
+          name="search"
+          onClick={props.handleClick}
+          value={props.term}
+          onChange={props.onInputChange}
+        />
+        {/* <ResultSearch isLoading={false} result={true}/> */}
+      </FormSearch>
+    </Container>
   );
 };
 
@@ -66,7 +64,7 @@ const RenderUserSearch = (props) => userList.map((i) => <ResultUser key={i} />);
 const ResultUser = (props) => (
   <List>
     <Avatar tam={32} />
-    <UserHeader username="dedaldino" />
+    <span>dedaldino</span>
   </List>
 );
 

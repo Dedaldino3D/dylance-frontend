@@ -10,7 +10,7 @@ export const Container = styled.div`
   align-items: center;
   max-width: 100%;
   box-shadow: var(--bs-gl);
-  background: var(--blue-link);
+  background: var(--blue-bolder);
   color: var(--white);
   width: 100%;
 
@@ -25,21 +25,18 @@ export const Container = styled.div`
   }
 
   .active-header_link {
-    background: var(--blue-900);
+    background: var(--blue-light);
     transition: all 0.4s ease-in-out;
-    svg {
-      color: var(--white) !important;
-    }
+    color: var(--white) !important;
   }
 
   a {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
     padding: 1.1em 0.1em;
     flex: 1 1 auto;
-    margin: -4px;
     margin-right: 2px;
+    display: flex;
+    justify-content: center;
+    font-weight: 600;
   }
 
   svg {
@@ -50,6 +47,7 @@ export const Container = styled.div`
   svg,
   .links a div {
     margin: auto;
+    text-align: center;
   }
 `;
 

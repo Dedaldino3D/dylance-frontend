@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 const Container = styled.div`
   position: relative;
@@ -12,7 +12,7 @@ const Container = styled.div`
     max-width: 100%;
     width: 100%;
     padding: 0 10px;
-    background-color: var(--black-200);
+    background-color: var(--blue-bolder);
     top: 100%;
     position: absolute;
     display: flex;
@@ -31,6 +31,40 @@ export const FormSearch = styled.form`
   font-size: 16px !important;
   width: 100%;
   position: relative;
+`;
+
+export const Input = styled.input`
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 30px 8px 12px;
+  margin-bottom: 0.425em;
+  width: 100%;
+  flex: 1 1 baseline;
+  box-shadow: var(--bs-inset);
+
+  :focus {
+    border: 1px solid var(--blue-75);
+    box-shadow: 0 0 0 4px var(--focus-ring), var(--bs-inset);
+    transition: border 0.3s ease-in-out;
+  }
+
+  &[name="search"] {
+    background-color: var(--white);
+    padding: 6px 10px;
+    border-radius: 20px !important;
+    transition: width 0.6s ease-in-out;
+    margin: 0;
+
+    ::placeholder {
+      font-size: 14px;
+    }
+  }
+
+  ${(props) =>
+    props.rounded &&
+    css`
+      border-radius: 40px;
+    `}
 `;
 
 export const ResultContainer = styled.div`

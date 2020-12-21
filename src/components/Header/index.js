@@ -2,14 +2,13 @@ import React from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { NavLink } from "react-router-dom";
-import { FaBell, FaWarehouse, FaGlobeAfrica, FaCog } from "react-icons/fa";
-import { IoIosChatboxes } from "react-icons/io";
-import { GiStarAltar } from "react-icons/gi";
+// import { FaBell, FaWarehouse, FaGlobeAfrica, FaCog } from "react-icons/fa";
+// import { IoIosChatboxes } from "react-icons/io";
+// import { GiStarAltar } from "react-icons/gi";
 
-import { getCurrentUser } from "../../selectors/user";
+// import { getCurrentUser } from "../../selectors/users";
 
 import SearchForm from "../Search/presenter";
-import Avatar from "../Avatar";
 import Container from "./styles";
 
 export const Header = (props) => {
@@ -17,26 +16,17 @@ export const Header = (props) => {
     <Container>
       <SearchForm />
       <div className="links">
-        <NavLink activeClassName="active-header_link" to={"/home"}>
-          <FaWarehouse />
-        </NavLink>
-        <NavLink activeClassName="active-header_link" to={`/${props.username}`}>
-          <Avatar tam={25} />
+        <NavLink activeClassName="active-header_link" to="/home">
+          Home
         </NavLink>
         <NavLink activeClassName="active-header_link" to="/messages">
-          <IoIosChatboxes />
-        </NavLink>
-        <NavLink activeClassName="active-header_link" to="/communities">
-          <FaGlobeAfrica />
-        </NavLink>
-        <NavLink activeClassName="active-header_link" to="/hall/global">
-          <GiStarAltar />
+          Messages
         </NavLink>
         <NavLink activeClassName="active-header_link" to="/notifications">
-          <FaBell />
+          Notifications
         </NavLink>
-        <NavLink activeactiveClassName="active-header_link" to="/settings">
-          <FaCog />
+        <NavLink activeClassName="active-header_link" to="/profile">
+          Profile
         </NavLink>
       </div>
     </Container>
@@ -48,12 +38,12 @@ Header.propTypes = {
 };
 
 const mapStateToProps = (state) => {
-  const {
-    user: { username },
-  } = getCurrentUser(state);
+  // const {
+  //   user: { username },
+  // } = getCurrentUser(state);
 
   return {
-    username,
+    username: "dedaldino",
   };
 };
 

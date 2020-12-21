@@ -4,37 +4,47 @@ import styled from "styled-components";
 import { array } from "prop-types";
 
 import { getSkills } from "../../actions/users";
-import { getSkils as getSkillsSelector } from "../../selectors/users";
+import { getSkills as getSkillsSelector } from "../../selectors/users";
 import Loading from "../Loading";
 
 const Container = styled.ul`
-  padding: 10px;
-  li {
+  border-radius: 4px;
+  box-shadow: var(--bs-ud);
+  background: var(--white);
+  color: var(--text);
+
+  & > :first-child {
     padding: 10px;
-    font-size: 12px;
-    font-weight: 600;
-    text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.4);
+    background: var(--blue-light);
+    color: var(--white-100);
   }
-  li + li {
+  li {
+    padding: 8px 10px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  & > li + li {
     border-bottom: 1px solid var(--border);
   }
 `;
 
 const ListSkills = ({ skills }) => {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    getSkills();
-  }, []);
+  // useEffect(() => {
+  //   getSkills();
+  // }, []);
 
-  useEffect(() => {
-    if (skills.length > 0) {
-      setLoading(false);
-    }
-  }, [skills]);
+  // useEffect(() => {
+  //   if (skills.length > 0) {
+  //     setLoading(false);
+  //   }
+  // }, [skills]);
 
   return (
     <Container>
+      <li>List of Skills</li>
       {loading ? (
         <Loading />
       ) : (
@@ -61,11 +71,11 @@ ListSkills.defaultProps = {
 };
 
 const mapState = (state) => ({
-  skills: getSkillsSelector(state),
+  // skills: getSkillsSelector(state),
 });
 
 const mapDispatch = (dispatch) => ({
-  getSkills: () => dispatch(getSkills()),
+  // getSkills: () => dispatch(getSkills()),
 });
 
 export default connect(mapState, mapDispatch)(ListSkills);
