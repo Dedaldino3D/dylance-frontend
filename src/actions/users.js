@@ -1,7 +1,7 @@
 import { normalize } from "normalizr";
 import { usersService } from "../services";
 import * as types from "../types/users";
-import { userSchema } from "./utils/schema";
+import { userSchema } from "./schema";
 
 export const getProfilePage = (username) => {
   return async (dispatch) => {
