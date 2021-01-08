@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import styled, { css } from "styled-components";
 import { string, func, bool } from "prop-types";
 import { FaTimes } from "react-icons/fa";
@@ -76,7 +75,7 @@ const ModalContainer = styled.div`
 const ModalHeader = styled.div`
   padding: 0.8em;
   font-size: 16px;
-  width: calc(100% - 40px);
+  width: 100%;
   font-weight: 600;
   display: flex;
   justify-content: space-between;
