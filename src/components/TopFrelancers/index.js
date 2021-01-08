@@ -9,16 +9,8 @@ import Avatar from "../Avatar";
 const Container = styled.div`
   border-radius: 4px;
   box-shadow: var(--bs-ud);
-  max-height: 400px;
-  overflow-y: scroll;
   background: var(--white-100);
   color: var(--text);
-
-  -webkit-scrollbar {
-    width: 10px;
-    border-radius: 20px;
-    background: var(--black-200);
-  }
 `;
 
 const Header = styled.h1`
@@ -28,7 +20,7 @@ const Header = styled.h1`
   font-size: 14px;
   background: var(--blue-light);
   color: var(--white);
-  margin: 0 0 10px;
+  margin: 0;
   position: sticky;
   top: 0;
   z-index: 1;
@@ -56,22 +48,40 @@ const User = styled.li`
   }
 `;
 
+const Users = styled.div`
+  max-height: 400px;
+  overflow-y: auto;
+  ::-webkit-scrollbar {
+    width: 10px;
+    background: var(--black-200);
+    cursor: pointer;
+  }
+
+  ::-webkit-scrollbar-trace,
+  ::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 6px 0 rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+  }
+`;
+
 const TopFrelancers = ({ users, getTopFrelancers }) => {
   return (
     <>
       <Container>
         <Header>Top Frelancers</Header>
-        <ul>
-          {users.map((user) => (
-            <User key={user.id}>
-              <Avatar tam={30} />
-              <div>
-                <span>{user.name}</span>
-                <span>{user.profission}</span>
-              </div>
-            </User>
-          ))}
-        </ul>
+        <Users>
+          <ul>
+            {users.map((user) => (
+              <User key={user.id}>
+                <Avatar tam={30} />
+                <div>
+                  <span>{user.name}</span>
+                  <span>{user.profission}</span>
+                </div>
+              </User>
+            ))}
+          </ul>
+        </Users>
       </Container>
       <Footer />
     </>
