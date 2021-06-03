@@ -3,15 +3,17 @@ import { connect } from "react-redux";
 import { func, string } from "prop-types";
 
 // import { createProposal } from "../../actions/proposals";
-import { Modal } from "../common";
+import { Modal, Input, Textarea } from "../common";
 import { Container } from "./styles";
 
 const CreateProposal = ({ createProposal, active, setActive }) => {
   const [state, setState] = useState({
+    title: "",
     description: "",
     files: [],
     links: [],
   });
+
   const handleChange = (e) => {
     setState({
       [e.target.name]: e.target.value,
@@ -28,7 +30,25 @@ const CreateProposal = ({ createProposal, active, setActive }) => {
       close={() => setActive(false)}
       text="Creating a Proposal"
     >
-      <Container>Creating proposal</Container>
+      <Container>
+        <form method="POST" onSubmit={handleSubmit}>
+          <Input
+            type="text"
+            value={state.title}
+            name="title"
+            onChange={handleChange}
+            placeholder="Proposal Subject"
+          />
+          <br></br>
+          <Textarea
+            onChange={handleChange}
+            name="description"
+            value={state.description}
+            placeholder="Proposal Description"
+          />
+          <button type="submit">Send proposal</button>
+        </form>
+      </Container>
     </Modal>
   );
 };
@@ -37,6 +57,6 @@ CreateProposal.propTypes = {
   func: func.isRequired,
 };
 const mapState = (state) => ({});
-const mapDispatch = (dispatcj) => ({});
+const mapDispatch = (dispatch) => ({});
 
 export default connect(mapState, mapDispatch)(CreateProposal);

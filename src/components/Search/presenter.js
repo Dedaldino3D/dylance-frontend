@@ -11,7 +11,7 @@ import Container, {
 } from "./styles";
 
 import Avatar from "../Avatar";
-import { Input } from "./styles";
+import { Input } from "../common";
 import RotateSpinLoader from "../Loading";
 
 export const SearchForm = (props) => {

@@ -77,7 +77,7 @@ const ProfilePage = (props) => {
       <Box>
         <Header>
           <h1>Portfolio</h1>
-          <ButtonShadow>
+          <ButtonShadow pnClick>
             <FaPlus />
           </ButtonShadow>
         </Header>

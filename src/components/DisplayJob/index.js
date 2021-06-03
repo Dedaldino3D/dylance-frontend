@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { connect } from "react-redux";
 import { func } from "prop-types";
 
@@ -7,6 +8,7 @@ import Footer from "../Footer";
 import { Container, Content, Info, Button, Main, Aside } from "./styles";
 import { Box, Header as BoxHeader } from "../Profile/styles";
 import { Tags } from "../Job";
+import CreateProposal from "../CreateProposal";
 
 export const ClientInfo = (props) => {
   return <Info></Info>;
@@ -17,10 +19,15 @@ export const ClientMoreJobs = (props) => {
 };
 
 export const ButtonSendProposal = (props) => {
-  return <Button>Send a Proposal</Button>;
+  return (
+    <Button onClick={() => props.setActive(!props.active)}>
+      Send a Proposal
+    </Button>
+  );
 };
 
 const DisplayJob = (props) => {
+  const [active, setActive] = useState(false);
   return (
     <>
       <LoadingBar />
@@ -68,7 +75,8 @@ const DisplayJob = (props) => {
           </Box>
         </Main>
         <Aside>
-          <ButtonSendProposal />
+          <ButtonSendProposal setActive={setActive} />
+          <CreateProposal active={active} setActive={setActive} />
           <ClientInfo />
           <ClientMoreJobs />
           <Footer />

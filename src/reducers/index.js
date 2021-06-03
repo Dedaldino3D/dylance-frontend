@@ -1,7 +1,7 @@
 import { combineReducers } from "redux";
 
 import auth from "./auth";
-import user from "./user";
+import user from "./users";
 import profile from "./profile";
 import loadingBar from "./loadingBar";
 
